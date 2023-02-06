@@ -1,0 +1,458 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Poppins:wght@200;300;600;700;800;900&family=Roboto&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #F8F9FB;
+  --secondary-color: #474BFF;
+  --Tertiary-color: #F1F2FB;
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --text-color: #26274B;
+
+  --poppins: 'poppins',sans-serif;
+  --Manrope: 'Manrope', sans-serif;
+  --Roboto: 'Roboto', sans-serif;
+  --Space-Grotest: 'Space Grotesk', sans-serif;
+  ;
+}
+
+html {
+ scroll-behavior: smooth; 
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+/*==========================================
+       ====> Header CSS <=====
+==========================================*/
+
+
+.headerStyle {
+  position: relative;
+  text-decoration: none;
+  font-family: 'Poppins',sans-serif;
+  color: var(--black-color);
+  font-size: 18px;
+  
+  letter-spacing: 0.5px;
+  padding: 0 10px;
+}
+
+.headerStyle:after {
+  content: "";
+  position: absolute;
+  background-color: var(--secondary-color);
+  height: 1px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+
+@media (max-width: 990px) {
+
+  .headerStyle {
+    position: relative;
+    text-decoration: none;
+    font-family: 'Poppins',sans-serif;
+    color: var(--black-color);
+    font-size: 18px;
+    width: 100px;
+    letter-spacing: 0.5px;
+    padding: 0 10px;
+  }
+
+}
+
+.headerStyle:hover {
+  color: var(--secondary-color);
+}
+.headerStyle:hover:after {
+  width: 100%;
+}
+
+.Header-Button-Style {
+  background-color: var(--Tertiary-color);
+  width: 6em;
+  height: 2em;
+}
+
+.header-logo {
+  width: 9em;
+  height: auto;
+}
+
+.YoutubeLogo {
+  width: 1em;
+  margin: 2px;
+}
+ 
+.navbar-toggler {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  transition: .5s ease-in-out;
+}
+
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+  outline: none;
+  box-shadow: none;
+  border: 0;
+  position: relative;
+}
+
+.navbar-toggler span {
+  margin: 0;
+  padding: 0;
+}
+
+.toggler-icon {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #d3531a;
+  border-radius: 1px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.middle-bar {
+  margin-top: 0px;
+}
+
+.navbar-toggler.collapsed .top-bar {
+  position: absolute;
+  top: 0px;
+  transform: rotate(0deg);
+}
+
+.navbar-toggler.collapsed .middle-bar {
+  opacity: 1;
+  position: absolute;
+  top: 10px;
+  filter: alpha(opacity=100);
+}
+
+.navbar-toggler.collapsed .bottom-bar {
+  position: absolute;
+  top: 20px;
+  transform: rotate(0deg);
+}
+
+.navbar-toggler .top-bar {
+  top: inherit;
+  transform: rotate(135deg);
+}
+
+.navbar-toggler .middle-bar {
+  opacity: 0;
+  top: inherit;
+  filter: alpha(opacity=0);
+}
+
+.navbar-toggler .bottom-bar {
+  top: inherit;
+  transform: rotate(-135deg);
+}
+
+.navbar-toggler.collapsed .toggler-icon {
+  background: var(--secondary-color) ;
+} 
+
+/* ==========================================
+       ====> Hero Section CSS <=====
+==========================================
+*/
+
+*:after,::before {
+  box-sizing: border-box;
+}
+
+.HeroSection {
+  background-color: var(--Tertiary-color);
+}
+
+.HeroSectionHeading{
+  font-family: var(--poppins);
+  font-weight: 700;
+  font-size: 36px;
+}
+
+u {
+  text-decoration-color: var(--secondary-color);  
+}
+
+.heroSectionPtag {
+  color: var(--black-color);
+  font-family: var(--poppins);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.HeroSectionImg {
+  width: 100%;
+  height: 100%;
+}
+
+.HeroSectionButton {
+  width: 10em;
+  height: 3em;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border-width: 0;
+  border-radius: 0.65em;
+}
+
+/* ==========================================
+       ====> Body Content CSS <=====
+==========================================
+*/
+
+
+@media (max-width: 360px) {
+
+  .HeroSectionButton {
+    width: 10em;
+    height: 3em;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border-width: 0;
+    border-radius: 0.65em;
+  }
+
+  .header-logo {
+    width: 6em;
+    height: auto;
+  }
+
+}
+
+.Box {
+  width: 230px;
+  height: 410px;
+  margin-top: 23px;
+  margin-bottom: 22px;
+  border-radius: 12px;
+  background-color: var(--white-color);
+}
+
+.box-bg {
+  width: 100%;
+  padding: 20px;
+  border-radius: 25px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.box-bg-ss {
+  width: 100%;
+  height: 230px;
+  padding: 20px;
+  border-radius: 25px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+}
+
+.font-box-heading {
+  width: 100%;
+  padding: 1px;
+  font-family: var(--Space-Grotest);
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 24px;
+  align-items: center;
+  text-align: center;
+  color: var(--black-color);
+}
+
+.font-box-sub-heading {
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+  font-family: "Roboto";
+  color: var(--text-color);
+}
+
+.box-button {
+  height: 45px;
+  width: 45%;
+  transform: all 0.1s ease-in 0s;
+  border: 1px;
+  border-color: var(--secondary-color);
+  border-style: solid;
+  background-color: transparent;
+  font-family: var(--Roboto);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  border-width: 1px;
+  color: var(--secondary-color);
+  box-sizing: border-box;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.box-button:hover {
+  color: var(--white-color);
+  background-color: var(--secondary-color);
+  outline: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.box-button:active {
+  border-width: 0px;
+  color: #ffffff;
+  background-color: var(--secondary-color);
+  outline: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+
+/* ==========================================
+       ====> Footer CSS <=====
+==========================================
+*/
+
+.Footer-bg {
+  background-color: var(--Tertiary-color);
+}
+
+.Foot-logo{
+  width: 75%;
+  height: auto;
+  margin-bottom: 2em;
+}
+
+.footer-Heading{
+  color: var(--secondary-color);
+  font-family: 'poppins';
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+.footer-subheading {
+  color: var(--text-color);
+  font-family: 'poppins';
+  font-weight: 400;
+  font-size: 1em;
+  transition: all 0.3s;
+}
+
+@media (max-width: 360px) {
+
+  .footer-subheading {
+    color: var(--text-color);
+    font-family: 'poppins';
+    font-weight: 400;
+    font-size: 12px;
+    transition: all 0.3s;
+  }
+
+  .footer-subheading:hover, .footer-subheading:focus {
+    text-decoration: none;
+  }
+
+}
+
+
+.footer-subheading:hover, .footer-subheading:focus {
+  text-decoration: none;
+}
+
+.Footer-Li-tag {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+  font-size: 1em;
+  padding-top: 6px;
+}
+
+.Footer-Bottom-Style{
+  background-color: var(--primary-color);
+  color: var(--black-color);
+  width: 100%;
+  font-family: 'poppins';
+  font-weight: 400;
+  font-size: 12px;
+  text-align: center;
+}
+
+
+
+
+.btn-ss {
+  width: 140px;
+  height: 55px;
+  font-size: 12px;
+  background-color: transparent; 
+  color: var(--secondary-color); 
+  border: 2px solid var(--secondary-color);
+  border-radius: 60.5px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.btn-ss:hover {
+  width: 140px;
+  height: 55px;
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.Img-Size {
+  width: 400px;
+  height: 400px;
+}
+
+
+@media (max-width: 960px) {
+
+  .Img-Size {
+    width: 200px;
+    height: 200px;
+  }
+
+}
+
+.Extra-Width {
+  width: 600px;
+  height: 160px;
+}
