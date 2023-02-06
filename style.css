@@ -438,21 +438,7 @@ u {
 }
 
 .Img-Size {
-  width: 400px;
-  height: 400px;
+  width: 100%;
 }
 
 
-@media (max-width: 960px) {
-
-  .Img-Size {
-    width: 200px;
-    height: 200px;
-  }
-
-}
-
-.Extra-Width {
-  width: 600px;
-  height: 160px;
-}
