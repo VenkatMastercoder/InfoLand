@@ -1,41 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!--Meta Tags-->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!--Bootstarp UI-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
-
-  <!--Icons-->
-  <link rel="icon" sizes="192x192" href="/icons/icon-192x192.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <!--Fonts-->
+  
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Poppins:wght@200;300;600;700;800;900&family=Roboto&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!--Header Icon-->
-  <link rel="icon" href="#" type="image/icon type">
 
-  <!--Exernal Css Link-->
-  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
 
-  <!--JavaScript-->                                          
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
 
+   <!--Bootstarp UI-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+
+
+  <!--External Link-->
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="../CSS/NewStyle.css">
+  
   <title>Info Land</title>
-</head>
 
+</head>
 <body>
+  <section id="signInsection" class="login-section">
+    <div class="main-div">
+      <h1 id="changehead" class="text-center">Login</h1>
+    <form >
+      <div class="pt-2 pb-2 txt_field">
+
+        <input type="text" name="email" id="txt_userEmail" required>
+       
+        <label>Email : </label>
+        
+      </div>
+
+      <div class="dd">
+        <select name="user_type" class="dd">
+          <option value="student">student</option>
+          <option value="researcher">Researcher</option>
+        </select>
+      </div>
+
+      <div class="pt-2 pb-2 txt_field">
+        <input type="password" name="password" id="txt_userPassword" required>
+        <label>Password :</label>
+      </div>
+
+
+      <div class="d-flex justify-content-around pt-5 pb-5">
+
+        <button type="button" id="btn_create" class="btn-style">Create Account</button>
+
+        <button type="button" id="btn_sign" class="btn-style">Login</button>
+    
+      </div>
+    <p id="message" hidden></p>
+  </form>
+    </div>
+  </section>
+
+  <section id="signOutSection" hidden>
+
   <!--Header Starting-->
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -59,20 +91,19 @@
             <p class="headerStyle">Home</p> 
             <span class="sr-only">(current)</span> 
           </a>
-          <a class="nav-link" href="#">
-            <p class="headerStyle">Community</p>
+
+          <a class="nav-link" href="#upload">
+            <p class="headerStyle">Upload</p>
           </a>
 
-          <a class="nav-link" href="#">
-            <p class="headerStyle"></p>
+          <a class="nav-link" href="#category">
+            <p class="headerStyle">Category</p>
           </a>
 
-          
-          <a class="nav-link" href="">
-            <p class="headerStyle"></p>
+          <a class="nav-link" href="../index.php">
+            <button type="button" id="btn_signOut" class="NewButtonStyle">Sign Out</button>
           </a>
- 
-          
+
         </div>
       </div>
     </nav>
@@ -94,7 +125,7 @@
       
             <p class="heroSectionPtag">Access over 135 million publication pages and stay up to date with what's happening in your field.</p>
       
-            <a href="#Department">
+            <a href="#category">
               <button class="HeroSectionButton">Join For Free
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewbox="0 0 16 16">
                 <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
@@ -108,7 +139,7 @@
   </section>
   <!--Hero Section Ending-->
 
-  <section>
+  <section id="category">
     <div class="pt-5 pb-5">
       <div class="container">
         <div class="row">
@@ -138,7 +169,7 @@
         <div class="row">
 
           <div class="col-6">
-            <img src="./Assests/index-stats.svg" class="Img-Size" alt="Img"  />
+            <img src="../Assests/index-stats.svg" class="Img-Size" alt="Img"  />
           </div>
 
           <div class="col-6 d-flex flex-column justify-content-center">
@@ -156,9 +187,49 @@
     </div>
     
   </section>
-  
-  
 
+    <!--Upload Section Starting-->
+    <section class="pt-3 pb-3" id="p">
+    <div class="container">
+      <div class="row"> 
+
+        <div class="col-12">
+          <h2 class="pt-2 pb-2">Upload</h2>
+        </div>
+
+        <div class="col-12 d-flex justify-content-center ddss">
+
+          <form class="d-flex flex-column justify-content-center ss" action="sucess.html" method="post" enctype="multipart/"
+                <label class="text-center">Choose Your PDF File</label><br>
+                <input id="pdf" type="file" name="pdf" value="" required><br><br>
+                <input id="upload" type="submit" name="submit" value="Upload">
+                <?php
+                include('db.php');
+
+                if (isset($_POST['submit'])) {
+                  $pdf=$_FILES['pdf']['name'];
+                  $pdf_type=$_FILES['pdf']['type'];
+                  $pdf_size=$_FILES['pdf']['size'];
+                  $pdf_tem_loc=$_FILES['pdf']['tmp_name'];
+                  $pdf_store="pdf".$pdf;
+
+                  move_uploaded_file($pdf_tem_loc,$pdf_store);
+
+                  $sql="INSERT INTO pdf_file(pdf) values('$pdf')";
+                  $query=mysqli_query($conn,$sql);
+                }
+
+              ?>
+
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Upload Section Ending-->
+  
+  
   <section>
     <div class="pt-3 pb-5">   
       <div class="container">
@@ -166,12 +237,10 @@
           <div class="col-12 text-center">
 
             <div class="Extra-Widt">
-            
-            <button class="btn-button btn-info" href="./insert.php">Upload Document</button>
-            
+                      
             <h2>Advance your research and join a community of 20 million scientists</h2>
 
-            <button class="box-button">Join Free Now</button>
+            <a href="#category"><button class="box-button">Join Free Now</button></a>
             </div>
           </div>
 
@@ -182,7 +251,6 @@
     </div>
   </section>
  
-
   <!--Footer Starting-->
   <footer class="Footer-bg pt-5 flex-shrink-0">
     <div class="container">
@@ -244,13 +312,26 @@
     </div>    
   </footer>
   <!--Footer Starting-->
+  </section>
 
 
-  <amp-addthis width="320" height="92" layout="responsive" data-pub-id="ra-63d55c8b21cad138" data-widget-id="27x8" data-widget-type="floating"></amp-addthis>
 
- 
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAJgYMXTGoicJK4YcMxcBMqmkF7jjNCTs4",
+      authDomain: "infoland-a1179.firebaseapp.com",
+      projectId: "infoland-a1179",
+      storageBucket: "infoland-a1179.appspot.com",
+      messagingSenderId: "729961145341",
+      appId: "1:729961145341:web:db00b75fb00389950e2f94",
+      measurementId: "G-09PPXEZ35T"
+    };
+    
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
 
-  <script type="text/javascript" src="./JS/NavBar.js"></script>
+  </script>
 
+  <script defer src="app.js"></script>
 </body>
 </html>
